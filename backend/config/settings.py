@@ -84,17 +84,19 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    # 'default': dj_database_url.config(default=os.environ.get("postgresql://postfolio_db_user:P2ATvzxiA6sBZjfMWYUwNcGne7jwHxL5@dpg-d1ci730dl3ps73fmf4og-a/postfolio_db")),
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'portfolio_db',
-        'USER': 'vishant',
-        'PASSWORD': 'Ch@h@t_1508',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(default=os.environ.get("postgresql://postfolio_db_user:P2ATvzxiA6sBZjfMWYUwNcGne7jwHxL5@dpg-d1ci730dl3ps73fmf4og-a/postfolio_db")),
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'portfolio_db',
+    #     'USER': 'vishant',
+    #     'PASSWORD': 'Ch@h@t_1508',
+    #     'HOST': 'localhost',
+    #     'PORT': '5432',
+    # }
 }
-
+# Use dj_database_url if DATABASE_URL is set in environment variables
+if 'DATABASE_URL' in os.environ:
+    DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=False)
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
