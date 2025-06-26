@@ -82,8 +82,8 @@ export default function Home() {
             <a href="#contact" className="hover:text-blue-600">Contact</a>
           </nav>
           <div className="flex items-center gap-4 text-gray-600 text-lg">
-            <a href="tel:+91XXXXXXXXXX" title="Call">📞</a>
-            <a href="mailto:your.email@example.com" title="Email">✉️</a>
+            <a href={`tel:${personal?.phone}`} title="Call">📞</a>
+            <a href={`mailto:${personal?.email}`} title="Email">✉️</a>
           </div>
         </div>
       </header>
