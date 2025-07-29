@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get("postgresql://postfolio_db_6cs9_user:5WCJqwiED27K0BNAbEKYH5rk70qkytTP@dpg-d1d3l0emcj7s73fcmivg-a/postfolio_db_6cs9"))
+    'default': dj_database_url.config(default=os.environ.get("postgresql://portfolio_db_iexz_user:Tded2sRXwFy0diAFGtRcGVZCE8Rxy6CX@dpg-d24b26h5pdvs7384ve8g-a/portfolio_db_iexz"))
     # 'default': {
     #     'ENGINE': 'django.db.backends.postgresql',
     #     'NAME': 'portfolio_db',
